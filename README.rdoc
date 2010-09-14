@@ -4,6 +4,9 @@ Get holidays in Japan.
 
 == USAGE
 
+  >> holidays = HolidayJp.between(Date.new(2010, 9, 14), Date.new(2010, 9, 21))
+  >> holidays.first.name # 敬老の日
+
 == Note on Patches/Pull Requests
  
 * Fork the project.
