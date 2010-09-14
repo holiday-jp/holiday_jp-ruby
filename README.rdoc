@@ -1,6 +1,8 @@
 = holiday_jp
 
-Description goes here.
+Get holidays in Japan.
+
+== USAGE
 
 == Note on Patches/Pull Requests
  
