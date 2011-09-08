@@ -18,4 +18,14 @@ class HolidayJp
       start <= hd[:date] && hd[:date] <= last ? OpenStruct.new(hd) : nil
     end.compact
   end
+
+
+  # == Whether the date is holiday or not.
+  # === Example:
+  # >> HolidayJp.holiday?(Date.new(2011, 9, 19)) # => true
+  # === parameter(s)
+  # * <tt>date</tt>
+  def self.holiday?(date)
+    HOLIDAYS.any? {|hd| hd[:date] == date }
+  end
 end

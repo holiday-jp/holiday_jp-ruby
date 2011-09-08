@@ -9,4 +9,9 @@ class TestHolidayJp < Test::Unit::TestCase
     assert_equal holidays[1].date, Date.new(2009, 1, 12)
     assert_equal holidays[1].name, '成人の日'
   end
+
+  should '#holiday?(date) returns date is holiday or not' do
+    assert HolidayJp.holiday?(Date.new(2011, 9, 19))
+    assert !HolidayJp.holiday?(Date.new(2011, 9, 18))
+  end
 end
