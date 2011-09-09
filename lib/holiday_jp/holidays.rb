@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-class HolidayJp
-  HOLIDAYS = [
+module HolidayJp
+  base_data = [
     {
       :date    => Date.new(1970, 1, 1),
       :name    => "元日",
@@ -7706,4 +7706,5 @@ class HolidayJp
       :week    => "金"
     },
   ]
+  HOLIDAYS = Hash[base_data.map {|h| [h[:date], OpenStruct.new(h)]}]
 end

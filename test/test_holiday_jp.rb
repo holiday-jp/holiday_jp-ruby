@@ -8,6 +8,10 @@ class TestHolidayJp < Test::Unit::TestCase
     assert_equal holidays[0].name, '元日'
     assert_equal holidays[1].date, Date.new(2009, 1, 12)
     assert_equal holidays[1].name, '成人の日'
+    holidays = HolidayJp.between(Date.new(2008, 12, 23), Date.new(2009, 1, 12))
+    assert_equal holidays[0].date, Date.new(2008, 12, 23)
+    assert_equal holidays[1].date, Date.new(2009, 1, 1)
+    assert_equal holidays[2].date, Date.new(2009, 1, 12)
   end
 
   should '#holiday?(date) returns date is holiday or not' do
