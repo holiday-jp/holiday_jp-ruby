@@ -3,7 +3,7 @@ require 'date'
 require 'ostruct'
 require 'holiday_jp/holidays'
 
-class HolidayJp
+module HolidayJp
   DAYNAMES_JA = %w(日 月 火 水 木 金 土)
 
   # == Between date
@@ -14,9 +14,9 @@ class HolidayJp
   # * <tt>start</tt>
   # * <tt>last</tt>
   def self.between(start, last)
-    HOLIDAYS.map do |hd|
-      start <= hd[:date] && hd[:date] <= last ? OpenStruct.new(hd) : nil
-    end.compact
+    HOLIDAYS.find_all do |date, holiday|
+      start <= date && date <= last
+    end.map(&:last)
   end
 
 
@@ -26,6 +26,6 @@ class HolidayJp
   # === parameter(s)
   # * <tt>date</tt>
   def self.holiday?(date)
-    HOLIDAYS.any? {|hd| hd[:date] == date }
+    !HOLIDAYS[date].nil?
   end
 end
