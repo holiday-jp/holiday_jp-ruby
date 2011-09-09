@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-class HolidayJp
+module HolidayJp
   HOLIDAYS = [
     {
       :date    => Date.new(1970, 1, 1),

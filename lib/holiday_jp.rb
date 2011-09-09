@@ -3,7 +3,7 @@ require 'date'
 require 'ostruct'
 require 'holiday_jp/holidays'
 
-class HolidayJp
+module HolidayJp
   DAYNAMES_JA = %w(日 月 火 水 木 金 土)
 
   # == Between date
