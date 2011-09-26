@@ -1,11 +1,8 @@
 # -*- coding: utf-8 -*-
-require 'date'
-require 'ostruct'
+require 'holiday_jp/holiday'
 require 'holiday_jp/holidays'
 
 module HolidayJp
-  DAYNAMES_JA = %w(日 月 火 水 木 金 土)
-
   # == Between date
   # === Example:
   #  >> holidays = HolidayJp.between(Date.new(2010, 9, 14), Date.new(2010, 9, 21))
