@@ -1,13 +1,13 @@
-= holiday_jp
+# holiday_jp [<img src="https://secure.travis-ci.org/komagata/holiday_jp.png"/>](http://travis-ci.org/komagata/holiday_jp))""]
 
 Get holidays in Japan.
 
-== USAGE
+## USAGE
 
-  >> holidays = HolidayJp.between(Date.new(2010, 9, 14), Date.new(2010, 9, 21))
-  >> holidays.first.name # 敬老の日
+    >> holidays = HolidayJp.between(Date.new(2010, 9, 14), Date.new(2010, 9, 21))
+    >> holidays.first.name # 敬老の日
 
-== Note on Patches/Pull Requests
+## Note on Patches/Pull Requests
  
 * Fork the project.
 * Make your feature addition or bug fix.
@@ -18,6 +18,6 @@ Get holidays in Japan.
    bump version in a commit by itself I can ignore when I pull)
 * Send me a pull request. Bonus points for topic branches.
 
-== Copyright
+## Copyright
 
 Copyright (c) 2009 Masaki Komagata. See LICENSE for details.
