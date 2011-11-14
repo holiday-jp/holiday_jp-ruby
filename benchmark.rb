@@ -22,4 +22,3 @@ end
 
 puts bench_holiday
 puts bench_between
-
