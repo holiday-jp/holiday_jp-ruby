@@ -13,6 +13,7 @@ module HolidayJp
       "みどりの日" => "Greenery Day",
       "こどもの日" => "Children's Day",
       "海の日" => "Marine Day",
+      "山の日" => "Mountain Day",
       "敬老の日" => "Respect for the Aged Day",
       "秋分の日" => "Autumnal Equinox Day",
       "体育の日" => "Health and Sports Day",

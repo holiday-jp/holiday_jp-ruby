@@ -22,4 +22,11 @@ class TestHolidayJp < Test::Unit::TestCase
     assert HolidayJp.holiday?(Date.new(2011, 9, 19))
     assert !HolidayJp.holiday?(Date.new(2011, 9, 18))
   end
+
+  should 'Mountain Day from 2016' do
+    assert !HolidayJp.holiday?(Date.new(2015, 8, 11))
+    (2016..2050).each do |year|
+      assert HolidayJp.holiday?(Date.new(year, 8, 11))
+    end
+  end
 end
