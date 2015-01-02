@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 require 'test/unit'
-require_relative '../lib/holiday_jp'
+require File.expand_path('../../lib/holiday_jp', __FILE__)
 
 class TestHolidayJp < Test::Unit::TestCase
   def test_between
