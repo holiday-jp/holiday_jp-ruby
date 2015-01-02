@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
-require 'helper'
+require 'test/unit'
+require_relative '../lib/holiday_jp'
 
 class TestHolidayJp < Test::Unit::TestCase
-  should '#between return correct holidays' do
+  def test_between
     holidays = HolidayJp.between(Date.new(2009, 1, 1), Date.new(2009, 1, 31))
     new_year_day = holidays[0]
     assert_equal new_year_day.date, Date.new(2009, 1, 1)
@@ -18,12 +19,12 @@ class TestHolidayJp < Test::Unit::TestCase
     assert_equal holidays[2].date, Date.new(2009, 1, 12)
   end
 
-  should '#holiday?(date) returns date is holiday or not' do
+  def test_holiday? 
     assert HolidayJp.holiday?(Date.new(2011, 9, 19))
     assert !HolidayJp.holiday?(Date.new(2011, 9, 18))
   end
 
-  should 'Mountain Day from 2016' do
+  def test_mountain_day_from_2016
     assert !HolidayJp.holiday?(Date.new(2015, 8, 11))
     (2016..2050).each do |year|
       assert HolidayJp.holiday?(Date.new(year, 8, 11))
