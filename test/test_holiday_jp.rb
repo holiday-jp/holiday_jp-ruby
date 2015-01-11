@@ -38,12 +38,14 @@ class TestHolidayJp < Test::Unit::TestCase
     assert !HolidayJp.holiday?(my_holiday_1)
     assert !HolidayJp.holiday?(my_holiday_2)
 
-    HolidayJp.add_custom_holiday_sources File.expand_path('../custom_holidays_1.yml', __FILE__), File.expand_path('../custom_holidays_2.yml', __FILE__)
+    custom_holidays_1 = File.expand_path("../custom_holidays_1.yml", __FILE__)
+    custom_holidays_2 = File.expand_path("../custom_holidays_2.yml", __FILE__)
+    HolidayJp.add_custom_holiday_sources custom_holidays_1, custom_holidays_2
     assert HolidayJp.holiday?(my_holiday_1)
     assert HolidayJp.holiday?(my_holiday_2)
 
     custom_holiday = HolidayJp.holiday?(my_holiday_1)
-    assert_equal custom_holiday.name, '誕生日'
+    assert_equal custom_holiday.name, "誕生日"
     assert_equal custom_holiday.name_en, nil
   end
 end

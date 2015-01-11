@@ -22,15 +22,23 @@ module HolidayJp
       end
     end
 
+    def holiday_sources
+      default_holiday_sources.concat(custom_holiday_sources).flatten.freeze
+    end
+
+    private
+
     def add_custom_holiday_source(source)
       @custom_holiday_sources ||= []
       @custom_holiday_sources << source
     end
 
     def default_holiday_sources
-      [File.expand_path('../../holidays.yml', __FILE__)].concat(@custom_holiday_sources.to_a).flatten.freeze
+      [File.expand_path("../../holidays.yml", __FILE__)]
     end
 
+    def custom_holiday_sources
+      @custom_holiday_sources.to_a
+    end
   end
-
 end

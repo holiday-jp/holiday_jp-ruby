@@ -17,8 +17,7 @@ module HolidayJp
     private
 
     def holiday_sources
-      HolidayJp.default_holiday_sources
+      HolidayJp.holiday_sources
     end
-
   end
 end
