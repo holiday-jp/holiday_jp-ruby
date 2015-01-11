@@ -30,4 +30,20 @@ class TestHolidayJp < Test::Unit::TestCase
       assert HolidayJp.holiday?(Date.new(year, 8, 11))
     end
   end
+
+  def test_custom_holiday
+    my_holiday_1 = Date.new(2015, 5, 13)
+    my_holiday_2 = Date.new(2015, 12, 7)
+
+    assert !HolidayJp.holiday?(my_holiday_1)
+    assert !HolidayJp.holiday?(my_holiday_2)
+
+    HolidayJp.add_custom_holiday_sources File.expand_path('../custom_holidays_1.yml', __FILE__), File.expand_path('../custom_holidays_2.yml', __FILE__)
+    assert HolidayJp.holiday?(my_holiday_1)
+    assert HolidayJp.holiday?(my_holiday_2)
+
+    custom_holiday = HolidayJp.holiday?(my_holiday_1)
+    assert_equal custom_holiday.name, '誕生日'
+    assert_equal custom_holiday.name_en, nil
+  end
 end
