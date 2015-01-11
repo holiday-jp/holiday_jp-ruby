@@ -7,6 +7,12 @@ Get holidays in Japan.
     >> holidays = HolidayJp.between(Date.new(2010, 9, 14), Date.new(2010, 9, 21))
     >> holidays.first.name # 敬老の日
 
+    # Loading Custom Definitions
+    >> my_holiday = Date.new(2015, 5, 13)
+    >> HolidayJp.holiday? my_holiday # false
+    >> HolidayJp.add_custom_holiday_sources '/path/to/custom_holidays_1.yml', '/path/to/custom_holidays_2.yml'
+    >> HolidayJp.holiday? my_holiday # true
+
 ## Note on Patches/Pull Requests
  
 * Fork the project.
