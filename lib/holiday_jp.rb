@@ -11,7 +11,7 @@ module HolidayJp
     holidays.holiday?(date)
   end
 
-private
+  private
 
   def self.holidays
     @@_holidays ||= Holidays.new
