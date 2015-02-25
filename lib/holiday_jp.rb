@@ -4,13 +4,11 @@ require 'holiday_jp/holidays'
 
 module HolidayJp
   def self.between(start, last)
-    holidays.holidays.find_all do |date, _holiday|
-      start <= date && date <= last
-    end.map(&:last)
+    holidays.between(start, last)
   end
 
   def self.holiday?(date)
-    holidays.holidays[date]
+    holidays.holiday?(date)
   end
 
 private
