@@ -12,5 +12,15 @@ module HolidayJp
         @holidays[key] = Holiday.new(key, value)
       end
     end
+
+    def between(start, last)
+      holidays.find_all do |date, _holiday|
+        start <= date && date <= last
+      end.map(&:last)
+    end
+
+    def holiday?(date)
+      holidays[date]
+    end
   end
 end
