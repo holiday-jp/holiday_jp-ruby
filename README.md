@@ -6,6 +6,7 @@ Get holidays in Japan.
 
     >> holidays = HolidayJp.between(Date.new(2010, 9, 14), Date.new(2010, 9, 21))
     >> holidays.first.name # 敬老の日
+    >> HolidayJp.holiday?(Date.new(2016, 8 ,11)) # true
 
 ## Note on Patches/Pull Requests
  
