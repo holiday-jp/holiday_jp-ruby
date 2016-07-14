@@ -10,6 +10,9 @@ holidays.first.name # 敬老の日
 HolidayJp.holiday?(Date.new(2016, 8 ,11)) # true
 ```
 
+## Supported Ruby Version
+Ruby 1.9.3+
+
 ## Note on Patches/Pull Requests
  
 * Fork the project.
