@@ -30,4 +30,18 @@ class TestHolidayJp < Test::Unit::TestCase
       assert HolidayJp.holiday?(Date.new(year, 8, 11))
     end
   end
+
+  def test_emperors_birthday
+    1970.upto(1988) do |year|
+      assert HolidayJp.holiday?(Date.new(year, 4, 29))
+    end
+
+    1989.upto(2016) do |year|
+      assert HolidayJp.holiday?(Date.new(year, 12, 23))
+    end
+
+    2017.upto(2050) do |year|
+      assert HolidayJp.holiday?(Date.new(year, 2, 23))
+    end
+  end
 end
