@@ -42,6 +42,7 @@ module HolidayJp
     def wday_name
       WDAY_NAMES[date.wday]
     end
-    alias_method :week, :wday_name
+
+    alias week wday_name
   end
 end

@@ -19,7 +19,7 @@ class TestHolidayJp < Test::Unit::TestCase
     assert_equal holidays[2].date, Date.new(2009, 1, 12)
   end
 
-  def test_holiday? 
+  def test_holiday?
     assert HolidayJp.holiday?(Date.new(2011, 9, 19))
     assert !HolidayJp.holiday?(Date.new(2011, 9, 18))
   end
