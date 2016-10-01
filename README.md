@@ -7,7 +7,8 @@ Get holidays in Japan.
 ```ruby
 holidays = HolidayJp.between(Date.new(2010, 9, 14), Date.new(2010, 9, 21))
 holidays.first.name # 敬老の日
-HolidayJp.holiday?(Date.new(2016, 8 ,11)) # true
+HolidayJp.holiday?(Date.new(2016, 8 ,11)) # #<HolidayJp::Holiday:0x007f9621863dc8 @date=Thu, 11 Aug 2016, @name="山の日">
+HolidayJp.holiday?(Date.new(2016, 8 ,12)) # nil
 ```
 
 ## Supported Ruby Version
