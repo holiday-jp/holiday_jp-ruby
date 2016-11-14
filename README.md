@@ -1,4 +1,4 @@
-# holiday_jp [<img src="https://secure.travis-ci.org/komagata/holiday_jp.png"/>](http://travis-ci.org/komagata/holiday_jp)
+# holiday_jp [![Build Status](https://travis-ci.org/holiday-jp/holiday_jp-ruby.svg?branch=master)](https://travis-ci.org/holiday-jp/holiday_jp-ruby)
 
 Get holidays in Japan.
 
