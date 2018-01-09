@@ -1,6 +1,5 @@
-# -*- coding: utf-8 -*-
-require 'holiday_jp/holiday'
-require 'holiday_jp/holidays'
+require "holiday_jp/holiday"
+require "holiday_jp/holidays"
 
 module HolidayJp
   def self.between(start, last)
@@ -10,8 +9,6 @@ module HolidayJp
   def self.holiday?(date)
     holidays.holiday?(date)
   end
-
-  private
 
   def self.holidays
     @@_holidays ||= Holidays.new
