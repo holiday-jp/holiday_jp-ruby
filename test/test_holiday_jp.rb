@@ -40,7 +40,10 @@ class TestHolidayJp < Test::Unit::TestCase
       assert HolidayJp.holiday?(Date.new(year, 12, 23))
     end
 
-    2019.upto(2050) do |year|
+    assert !HolidayJp.holiday?(Date.new(2019, 2, 23))
+    assert !HolidayJp.holiday?(Date.new(2019, 12, 23))
+
+    2020.upto(2050) do |year|
       assert HolidayJp.holiday?(Date.new(year, 2, 23))
     end
   end
