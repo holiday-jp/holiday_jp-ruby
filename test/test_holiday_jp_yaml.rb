@@ -1,0 +1,17 @@
+# -*- coding: utf-8 -*-
+require 'test/unit'
+require 'yaml'
+
+class TestHolidayJpYaml < Test::Unit::TestCase
+  def test_yaml
+    yaml = YAML.load_file(File.expand_path('../../holidays.yml', __FILE__))
+    holiday_jp_yaml = YAML.load_file(File.expand_path('../holiday_jp/holidays.yml', __FILE__))
+    yaml.map do |date, name|
+      assert_equal holiday_jp_yaml[date], name
+    end
+    holiday_jp_yaml.map do |date, name|
+      assert_equal yaml[date], name
+    end
+    assert_equal yaml.length, holiday_jp_yaml.length
+  end
+end
