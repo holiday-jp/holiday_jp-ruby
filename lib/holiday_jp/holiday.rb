@@ -18,6 +18,7 @@ module HolidayJp
       "敬老の日" => "Respect for the Aged Day",
       "秋分の日" => "Autumnal Equinox Day",
       "体育の日" => "Health and Sports Day",
+      "スポーツの日" => "Sports Day",
       "文化の日" => "National Culture Day",
       "勤労感謝の日" => "Labor Thanksgiving Day",
       "天皇誕生日" => "Emperor's Birthday",
