@@ -48,4 +48,11 @@ class TestHolidayJp < Test::Unit::TestCase
       assert HolidayJp.holiday?(Date.new(year, 2, 23))
     end
   end
+
+  def test_emperors_enthronement
+    assert HolidayJp.holiday?(Date.new(2019, 4, 30))
+    assert HolidayJp.holiday?(Date.new(2019, 5, 1))
+    assert HolidayJp.holiday?(Date.new(2019, 5, 2))
+    assert HolidayJp.holiday?(Date.new(2019, 10, 22))
+  end
 end
