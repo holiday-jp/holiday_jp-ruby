@@ -19,9 +19,33 @@ class TestHolidayJp < Test::Unit::TestCase
     assert_equal holidays[2].date, Date.new(2009, 1, 12)
   end
 
+  def test_between_accepts_datetime
+    holidays = HolidayJp.between(DateTime.new(2008, 12, 23), DateTime.new(2009, 1, 12))
+    assert_equal holidays[0].date, Date.new(2008, 12, 23)
+    assert_equal holidays[1].date, Date.new(2009, 1, 1)
+    assert_equal holidays[2].date, Date.new(2009, 1, 12)
+  end
+
+  def test_between_accepts_time
+    holidays = HolidayJp.between(Time.new(2008, 12, 23), Time.new(2009, 1, 12))
+    assert_equal holidays[0].date, Date.new(2008, 12, 23)
+    assert_equal holidays[1].date, Date.new(2009, 1, 1)
+    assert_equal holidays[2].date, Date.new(2009, 1, 12)
+  end
+
   def test_holiday?
     assert HolidayJp.holiday?(Date.new(2011, 9, 19))
     assert !HolidayJp.holiday?(Date.new(2011, 9, 18))
+  end
+
+  def test_holiday_p_accepts_datetime
+    assert HolidayJp.holiday?(DateTime.new(2011, 9, 19))
+    assert !HolidayJp.holiday?(DateTime.new(2011, 9, 18))
+  end
+
+  def test_holiday_p_accepts_time
+    assert HolidayJp.holiday?(Time.new(2011, 9, 19))
+    assert !HolidayJp.holiday?(Time.new(2011, 9, 18))
   end
 
   def test_mountain_day_from_2016

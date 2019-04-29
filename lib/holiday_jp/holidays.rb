@@ -14,12 +14,12 @@ module HolidayJp
 
     def between(start, last)
       holidays.find_all do |date, _holiday|
-        start <= date && date <= last
+        start.to_date <= date && date <= last.to_date
       end.map(&:last)
     end
 
     def holiday?(date)
-      holidays[date]
+      holidays[date.to_date]
     end
   end
 end
