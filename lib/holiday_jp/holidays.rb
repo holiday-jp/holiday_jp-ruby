@@ -19,7 +19,7 @@ module HolidayJp
     end
 
     def holiday?(date)
-      holidays[date.to_date]
+      holidays.has_key?(date.to_date)
     end
   end
 end
