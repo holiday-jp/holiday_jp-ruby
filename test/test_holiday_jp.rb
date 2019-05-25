@@ -34,31 +34,31 @@ class TestHolidayJp < Test::Unit::TestCase
   end
 
   def test_holiday?
-    assert HolidayJp.holiday?(Date.new(2011, 9, 19))
-    assert !HolidayJp.holiday?(Date.new(2011, 9, 18))
+    assert_true HolidayJp.holiday?(Date.new(2011, 9, 19))
+    assert_false HolidayJp.holiday?(Date.new(2011, 9, 18))
   end
 
   def test_holiday_p_accepts_datetime
-    assert HolidayJp.holiday?(DateTime.new(2011, 9, 19))
-    assert !HolidayJp.holiday?(DateTime.new(2011, 9, 18))
+    assert_true HolidayJp.holiday?(DateTime.new(2011, 9, 19))
+    assert_false HolidayJp.holiday?(DateTime.new(2011, 9, 18))
   end
 
   def test_holiday_p_accepts_time
-    assert HolidayJp.holiday?(Time.new(2011, 9, 19))
-    assert !HolidayJp.holiday?(Time.new(2011, 9, 18))
+    assert_true HolidayJp.holiday?(Time.new(2011, 9, 19))
+    assert_false HolidayJp.holiday?(Time.new(2011, 9, 18))
   end
 
   def test_mountain_day_from_2016
-    assert !HolidayJp.holiday?(Date.new(2015, 8, 11))
+    assert_false HolidayJp.holiday?(Date.new(2015, 8, 11))
     (2016..2050).each do |year|
       next if year == 2020 # Tokyo Olympic year
-      assert HolidayJp.holiday?(Date.new(year, 8, 11))
+      assert_true HolidayJp.holiday?(Date.new(year, 8, 11))
     end
   end
 
   def test_emperors_birthday
     1970.upto(1988) do |year|
-      assert HolidayJp.holiday?(Date.new(year, 4, 29))
+      assert_true HolidayJp.holiday?(Date.new(year, 4, 29))
     end
 
     1989.upto(2018) do |year|
