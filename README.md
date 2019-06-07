@@ -13,8 +13,28 @@ HolidayJp.holiday?(Date.new(2016, 8 ,11)) # true
 ## Supported Ruby Version
 Ruby 1.9.3+
 
+## Installation
+
+Add this line to your application's Gemfile:
+
+```ruby
+gem 'holiday_jp'
+```
+
+And then execute:
+
+```sh
+$ bundle
+```
+
+Or install it yourself as:
+
+```sh
+$ gem install holiday_jp
+```
+
 ## Note on Patches/Pull Requests
- 
+
 * Fork the project.
 * Make your feature addition or bug fix.
 * Add tests for it. This is important so I don't break it in a
