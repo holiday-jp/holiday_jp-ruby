@@ -25,6 +25,7 @@ jobs:
         run: |
           git submodule update --init
           gem install bundler -v '~> 1.6'
+          bundle install
 
       - name: Run test
         run: bundle exec rake test
