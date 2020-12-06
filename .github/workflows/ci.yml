@@ -1,0 +1,31 @@
+---
+name: test
+
+on:
+  push:
+  schedule:
+    - cron:  '0 1 * * *'
+
+jobs:
+  job-test:
+    name: Test
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        ruby-version: [ '2.4', '2.5', '2.6', '2.7' ]
+    steps:
+      - uses: actions/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby-version }}
+
+      - name: Check out source code
+        uses: actions/checkout@v2
+
+      - name: Setup
+        run: |
+          git submodule update --init
+          gem install bundler -v '~> 1.6'
+          bundle install
+
+      - name: Run test
+        run: bundle exec rake test
