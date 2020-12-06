@@ -51,7 +51,7 @@ class TestHolidayJp < Test::Unit::TestCase
   def test_mountain_day_from_2016
     assert_false HolidayJp.holiday?(Date.new(2015, 8, 11))
     (2016..2050).each do |year|
-      next if year == 2020 # Tokyo Olympic year
+      next if year == 2020 || year == 2021 # Tokyo Olympic year
       assert_true HolidayJp.holiday?(Date.new(year, 8, 11))
     end
   end
