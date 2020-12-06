@@ -1,4 +1,4 @@
-# holiday_jp [![Build Status](https://travis-ci.org/holiday-jp/holiday_jp-ruby.svg?branch=master)](https://travis-ci.org/holiday-jp/holiday_jp-ruby)
+# holiday_jp [![test](https://github.com/holiday-jp/holiday_jp-ruby/workflows/test/badge.svg)](https://github.com/holiday-jp/holiday_jp-ruby/actions)
 
 Get holidays in Japan.
 
