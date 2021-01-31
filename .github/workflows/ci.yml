@@ -12,7 +12,13 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        ruby-version: [ '2.4', '2.5', '2.6', '2.7' ]
+        ruby-version: ['2.4', '2.5', '2.6', '2.7']
+        experimental: [false]
+        include:
+          - ruby-version: '3.0'
+            experimental: true
+        continue-on-error: ${{ matrix.experimental }}
+      
     steps:
       - uses: ruby/setup-ruby@v1
         with:
