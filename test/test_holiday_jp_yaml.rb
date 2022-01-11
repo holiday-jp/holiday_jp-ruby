@@ -5,11 +5,23 @@ require 'yaml'
 
 class TestHolidayJpYaml < Test::Unit::TestCase
   def test_yaml
-    yaml = YAML.load_file(File.expand_path('../../holidays.yml', __FILE__))
+    yaml = {}
+    file = File.expand_path("../../holidays.yml", __FILE__)
+    if YAML.respond_to?(:unsafe_load_file)
+      yaml = YAML.unsafe_load_file(file)
+    else
+      yaml = YAML.load_file(file)
+    end
+    holiday_jp_yaml = {}
     uri = URI.parse('https://raw.githubusercontent.com/holiday-jp/holiday_jp/v0.x/holidays.yml')
     http = Net::HTTP.new(uri.host, uri.port)
     http.use_ssl = true
-    holiday_jp_yaml = YAML.load(http.get(uri.request_uri).body)
+    response_body = http.get(uri.request_uri).body
+    if YAML.respond_to?(:unsafe_load)
+      holiday_jp_yaml = YAML.unsafe_load(response_body)
+    else
+      holiday_jp_yaml = YAML.load(response_body)
+    end
     yaml.map do |date, name|
       assert_equal holiday_jp_yaml[date], name
     end

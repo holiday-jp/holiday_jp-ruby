@@ -20,8 +20,10 @@ jobs:
         include:
           - ruby-version: '3.0'
             experimental: true
+          - ruby-version: '3.1'
+            experimental: true
     continue-on-error: ${{ matrix.experimental }}
-      
+
     steps:
       - uses: ruby/setup-ruby@v1
         with:

@@ -6,7 +6,13 @@ module HolidayJp
 
     def initialize
       @holidays = {}
-      yaml = YAML.load_file(File.expand_path("../../../holidays.yml", __FILE__))
+      yaml = {}
+      file = File.expand_path("../../../holidays.yml", __FILE__)
+      if YAML.respond_to?(:unsafe_load_file)
+        yaml = YAML.unsafe_load_file(file)
+      else
+        yaml = YAML.load_file(file)
+      end
       yaml.map do |key, value|
         @holidays[key] = Holiday.new(key, value)
       end
