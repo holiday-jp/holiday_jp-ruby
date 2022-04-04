@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = HolidayJp::VERSION
   s.authors     = ['Masaki Komagata']
   s.email       = ['komagata@gmail.com']
-  s.homepage    = 'http://github.com/komagata/holiday_jp'
+  s.homepage    = 'https://github.com/komagata/holiday_jp'
   s.summary     = 'Japanese Holidays.'
   s.description = 'Japanese Holidays from 1970 to 2050.'
 
