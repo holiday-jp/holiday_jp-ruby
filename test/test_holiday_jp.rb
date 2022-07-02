@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 require 'test/unit'
 require File.expand_path('../../lib/holiday_jp', __FILE__)
 

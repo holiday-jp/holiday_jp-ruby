@@ -11,7 +11,7 @@ HolidayJp.holiday?(Date.new(2016, 8 ,11)) # true
 ```
 
 ## Supported Ruby Version
-Ruby 1.9.3+
+Ruby 2.4+
 
 ## Installation
 
